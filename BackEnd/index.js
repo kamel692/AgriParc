@@ -10,24 +10,21 @@ app.use(cors());
 var materiels = [
   {
     'id': 1,
-    'type': "Vehicule",
+    'type': "nc-icon nc-globe text-warning", //"Vehicule",
     'description': "tracteur Deutz avec chargeur et benette,embrayage à refaire. Mécanique impeccable.",
-    'icon': "nc-icon nc-globe text-warning", 
     'nom': "Tracteur"
   },
   {
     'id': 2,
-    'type': "Materiel mecanique",
+    'type': "nc-icon nc-money-coins text-success",// "Materiel mecanique",
     'description': "mini pelle Catepillar 5 tonnes 305 CR; Année : 2005, Heures : 2875 h," +
       "Attache rapide Verachter CW 10 mécanique ( largeur entre oreille 320 mm ), Double ligne hydraulique BRH + double effet pour pince de trie",
-    'icon': "nc-icon nc-money-coins text-success",
     'nom': "Mini pelle"
   },
   {
     'id': 3,
-    'type': "Outils",
-    'description': "Pelle terrassier acier, manche bois L.110 cm, entièrement trempée, manche en frêne vernis PEFC",
-    'icon': "nc-icon nc-vector text-danger",
+    'type': "nc-icon nc-vector text-danger", //"Outils",
+    'description': "Pelle terrassier acier, manche bois L.110 cm, entièrement trempée, manche en frêne vernis",
     'nom': "Pelle"
   }
 ];
