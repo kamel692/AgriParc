@@ -17,6 +17,7 @@ export class MyComponentComponent implements OnInit {
 
   @Output() isOver = new EventEmitter<Object>();
   @Output() hasEntered = new EventEmitter<Object>();
+  @Output() delete = new EventEmitter<Object>();
 
   constructor() { 
   }
@@ -32,6 +33,10 @@ export class MyComponentComponent implements OnInit {
   @HostListener('mouseenter')
   onMouseEnter(){
     this.hasEntered.emit() ;
+  }
+
+  onDelete(id: number){
+    this.delete.emit({ id : id}) ;
   }
 
 }

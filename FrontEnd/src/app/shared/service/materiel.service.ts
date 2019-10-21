@@ -30,12 +30,23 @@ export class MaterielService {
     return this.http.get(this.apiUrl + "/materiels").toPromise().then(
       res => {
         let materiels : Array<Materiel> = new Array<Materiel>() ;
-        console.warn("success : ")
-        console.log(res) ;
         for(let i in res){
           materiels.push(new Materiel(res[i].id, res[i].type, res[i].description, res[i].nom)) ;
         }
         return materiels ;
+      },
+      error => {
+        console.warn("error : ")
+        console.log(error)
+        return error ;
+      }
+    )
+  }
+
+  public deleteMateriel(id:number){
+    return this.http.delete(this.apiUrl + "/materiels/"+ id).toPromise().then(
+      res => {
+        return id ;
       },
       error => {
         console.warn("error : ")
