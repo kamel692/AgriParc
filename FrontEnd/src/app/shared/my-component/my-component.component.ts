@@ -8,14 +8,12 @@ import { Component, OnInit, Input, HostListener, Output, EventEmitter } from '@a
 export class MyComponentComponent implements OnInit {
 
   @Input() id ;
-  @Input() title ;
-  @Input() figure;
-  @Input() unity ;
-  @Input() iconHeader ;
+  @Input() description;
+  @Input() type ;
+  @Input() nom ;
   @Input() classFooter = "" ;
   @Input() textFooter ;
   @Input() dateFooter : Date ;
-  @Input() step:number = 10;
 
   @Output() isOver = new EventEmitter<Object>();
   @Output() hasEntered = new EventEmitter<Object>();
@@ -24,11 +22,6 @@ export class MyComponentComponent implements OnInit {
   }
 
   ngOnInit() {
-  }
-
-  @HostListener('click')
-  onClick(){
-    this.figure= parseFloat(this.figure) + this.step ;
   }
 
   @HostListener('mouseover')

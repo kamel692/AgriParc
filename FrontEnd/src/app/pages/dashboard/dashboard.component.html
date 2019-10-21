@@ -2,10 +2,9 @@
 
   <div *ngFor= "let component of this.componentArray; let i = index" class = "col-lg-12 col-md-6 col-sm-6">
     <app-my-component appMyDirective
-      iconHeader = {{component.iconHeader}}
-      title = {{component.title}}
-      figure = {{component.figure}}
-      unity = {{component.unity}}
+      type = {{component.type}}
+      description = {{component.description}}
+      nom = {{component.nom}}
       classFooter = {{component.classFooter}}
       dateFooter = {{component.dateFooter}}>
     </app-my-component>
@@ -78,10 +77,10 @@
 </div>
 <form [formGroup] = "componentCreationForm" (ngSubmit)="onSubmit(componentCreationForm)">
   <div>
-      <label for="title">
-        Title
+      <label for="nom">
+        Nom
       </label>
-      <input id="title" type="text" formControlName="title" 
+      <input id="nom" type="text" formControlName="nom" 
         required minlength="4">
     </div>
 
@@ -96,17 +95,17 @@
     </div>
   
     <div>
-      <label for="value">
-        Value
+      <label for="description">
+        Description
       </label>
-      <input id="value" type="text" formControlName="value">
+      <input id="description" type="text" formControlName="description">
     </div>
   
     <div>
-      <label for="icon">
-        Icon
+      <label for="type">
+        Type
       </label>
-      <input id="icon" type="text" formControlName="icon">
+      <input id="type" type="text" formControlName="type">
     </div>
 
   <button class="button" type="submit" >Purchase</button>

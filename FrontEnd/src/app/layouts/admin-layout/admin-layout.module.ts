@@ -17,9 +17,7 @@ import { UpgradeComponent }         from '../../pages/upgrade/upgrade.component'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MyComponentComponent } from '../../shared/my-component/my-component.component';
 import { MyDirectiveDirective } from 'app/shared/directive/my-directive.directive';
-import { StatService } from 'app/shared/service/stat.service';
-import { BrowserModule }    from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { MaterielService } from 'app/shared/service/materiel.service';
 
 @NgModule({
   imports: [
@@ -42,7 +40,7 @@ import { HttpClientModule } from '@angular/common/http';
     MyDirectiveDirective
   ],
   providers: [
-    StatService
+    MaterielService
   ]
 })
 
