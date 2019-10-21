@@ -17,6 +17,7 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
+
 // requete get:
 app.get('/materiels', (req, res, next) => {
    connection.query(
@@ -51,9 +52,40 @@ app.post('/materiels', (req, res, next) => {
 });
 
 
+
+
+app.delete('/materiels/:id',(req,res,next)=>{
+
+  console.log(req.params.id);
+  connection.query(
+    'DELETE FROM t_materiel WHERE id=?',
+    [req.params.id],
+    (error,result)=>{
+      if(error){
+        console.error(error);
+        res.status(500).json({ status: 'error' });
+      }else{
+        //res.redirect('/materiels');
+        console.warn("supression success");
+        res.status(200).json(result)
+      }
+    }
+  )
+  });
+
+
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 module.exports = express.Router();
+
+process.on('SIGINT',function(){
+  console.log("fin de connexion");
+  process.exit();
+  connection.end();
+});
+
+
 
 
 
