@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS t_materiel(
 
 
 
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 ;
 
 
 -- insertion de donnees (test):
