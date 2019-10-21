@@ -268,10 +268,15 @@ export class DashboardComponent implements OnInit {
     }else{
       console.warn('Your order has been submitted : ', componentRawData);
   
-      this.materielService.addMateriel(new Materiel(null, componentRawData.value.type, componentRawData.value.desciption, componentRawData.value.nom)).then(
+      this.materielService.addMateriel(new Materiel(null, componentRawData.value.type, componentRawData.value.description, componentRawData.value.nom)).then(
         res => {
+          console.warn(componentRawData.value)
+          console.warn(res)
           let component = this.getComponentFromMateriel(res) ;
           this.componentArray.push(component)
+        },
+        err =>{
+          console.warn(err)
         }
       );
   
