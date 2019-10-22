@@ -13,6 +13,8 @@
     </app-my-component>
   </div>
 </div>
+
+<h3>Ajout de matériel agricole </h3>
 <form [formGroup] = "componentCreationForm" (ngSubmit)="onSubmit(componentCreationForm)">
   <div>
       <label for="nom">
@@ -46,5 +48,5 @@
       <input id="type" type="text" formControlName="type">
     </div>
 
-  <button class="button" type="submit" >Purchase</button>
+  <button class="button" type="submit" >Ajouter location de matériel</button>
 </form>
