@@ -11,15 +11,11 @@ CREATE DATABASE IF NOT EXISTS agriparc;
 CREATE TABLE IF NOT EXISTS t_materiel(
 
 	id int(10) unsigned NOT NULL AUTO_INCREMENT,
-	type varchar(255) DEFAULT NULL,
+	type varchar(255) NOT NULL UNIQUE,
 	description text DEFAULT NULL,
 	nom varchar(255) DEFAULT NULL,
 	PRIMARY KEY (id)
-
-
-
-
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
 
 -- insertion de donnees (test):
