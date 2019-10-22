@@ -18,6 +18,8 @@ export class DashboardComponent implements OnInit {
 
   public afficherMateriel : boolean;
 
+  public formValid :boolean ;
+
   public componentArray : Array<MyComponentComponent> ;
 
   constructor(private materielService:MaterielService, private formBuilder : FormBuilder){
@@ -32,6 +34,8 @@ export class DashboardComponent implements OnInit {
     })
 
     this.afficherMateriel = true ;
+
+    this.formValid = true ;
 
     this.componentArray = new Array<MyComponentComponent>() ;
 
@@ -69,7 +73,7 @@ export class DashboardComponent implements OnInit {
   }
 
   onSubmit(componentRawData){
-    
+    this.formValid = !componentRawData.invalid ;
     if(componentRawData.invalid){
       console.warn("Invalid")
     }else{

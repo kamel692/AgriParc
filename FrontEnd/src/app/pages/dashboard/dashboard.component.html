@@ -15,6 +15,12 @@
 </div>
 
 <h3>Ajout de matériel agricole </h3>
+
+<div *ngIf="!this.formValid"
+class="alert alert-danger">
+    Formulaire invalide.
+</div>
+
 <form [formGroup] = "componentCreationForm" (ngSubmit)="onSubmit(componentCreationForm)">
   <div>
       <label for="nom">
@@ -24,15 +30,6 @@
         required minlength="4">
     </div>
 
-    <div *ngIf="componentCreationForm.invalid"
-    class="alert alert-danger">
-      <div *ngIf="componentCreationForm.hasError('required')">
-        Name is required.
-      </div>
-      <div *ngIf="componentCreationForm.hasError('minlength')">
-        Minimum length = 2.
-      </div>
-    </div>
   
     <div>
       <label for="description">
