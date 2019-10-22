@@ -8,6 +8,7 @@
         </div>
         <div class="col-11 col-md-11">
           <div class="numbers">
+            <i class="nc-icon nc-simple-remove" (click)="onDelete(id)"></i>
             <p class="card-title">{{nom}}</p>
             <p class="card-category">{{description}}
               <p>
@@ -19,9 +20,6 @@
       <hr>
       <div class="stats">
           <i class={{classFooter}}></i> {{textFooter}} {{dateFooter | date}}
-      </div>
-      <div>
-        <button (click)="onDelete(id)">Supprimer</button>
       </div>
     </div>
   </div>

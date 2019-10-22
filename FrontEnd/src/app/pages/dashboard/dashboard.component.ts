@@ -14,15 +14,9 @@ import { Materiel } from 'app/shared/materiel/materiel';
 
 export class DashboardComponent implements OnInit {
 
-  public canvas: any;
-  public ctx;
-  public chartColor;
-  public chartEmail;
-  public chartHours;
-  public revenueValue : number ;
   public componentCreationForm ;
 
-  public afficherStatistique : boolean;
+  public afficherMateriel : boolean;
 
   public componentArray : Array<MyComponentComponent> ;
 
@@ -37,9 +31,7 @@ export class DashboardComponent implements OnInit {
       nom:''
     })
 
-    this.chartColor = "#FFFFFF";
-    this.revenueValue = 1500.25 ;
-    this.afficherStatistique = true ;
+    this.afficherMateriel = true ;
 
     this.componentArray = new Array<MyComponentComponent>() ;
 
@@ -96,14 +88,11 @@ export class DashboardComponent implements OnInit {
     }
   }
 
-  onRevenueComponentOver(){
-    this.revenueValue = this.revenueValue + 1 ;
-  }
-
   delete(event){
     console.log(event.id) ;
     this.materielService.deleteMateriel(event.id).then(
       res => {
+        console.log(res)
         let index = this.componentArray.findIndex((component) =>component.id == res)
         this.componentArray.splice(index, 1) ;
       }
